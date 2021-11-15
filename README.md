@@ -1,11 +1,32 @@
-# Welcome to [Slidev](https://github.com/slidevjs/slidev)!
 
-To start the slide show:
+# web beginner
+Web development slides for beginning engineering students.
 
-- `npm install`
-- `npm run dev`
-- visit http://localhost:3030
 
-Edit the [slides.md](./slides.md) to see the changes.
+## Tech Stack
 
-Learn more about Slidev on [documentations](https://sli.dev/).
+[Slidev](https://sli.dev)
+  
+## Installation
+
+```bash
+# Install packages
+npm install
+```
+    
+## Run Locally
+
+Dev build
+
+```bash
+# Build all
+npm dev
+```
+
+
+  
+## Authors
+
+- [@barbapapazes](https://www.github.com/barbapapazes)
+
+  
