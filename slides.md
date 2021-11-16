@@ -1,7 +1,7 @@
 ---
 theme: seriph
 background: >-
-  https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1574&q=80
+  https://images.unsplash.com/photo-1601302249997-35a818561543?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1470&q=80
 class: text-center
 highlighter: shiki
 lineNumbers: false
@@ -17,9 +17,36 @@ titleTemplate: '%s - Estéban Soubiran'
 # Le développement web
 La première journée d'un long voyage
 
+<div class="abs-bl m-6">
+11/2021
+</div>
+
 <div class="abs-br m-6">
   Par <a href="https://esteban-soubiran.ste" target="_blank">Estéban Soubiran</a>
 </div>
+
+---
+layout: intro
+---
+
+# Estéban Soubiran
+
+<div class="leading-8 opacity-80">
+Élève-ingénieur en sécurité informatique<br>
+Développeur web dans son temps libre<br>
+Passionné par le monde associatif<br>
+</div>
+
+<div class="my-10 grid grid-cols-[40px,1fr] w-min gap-y-4">
+  <ri-github-line class="opacity-50"/>
+  <div><a href="https://github.com/barbapapazes" target="_blank">Barbapapazes</a></div>
+  <ri-twitter-line class="opacity-50"/>
+  <div><a href="https://twitter.com/soubiran25" target="_blank">@SOUBIRAN25</a></div>
+  <ri-user-3-line class="opacity-50"/>
+  <div style="white-space: nowrap;"><a href="https://esteban-soubiran.site" target="_blank">esteban-soubiran.site</a></div>
+</div>
+
+<img src="/me.webp" class="rounded-full w-40 abs-tr mt-16 mr-12"/>
 
 ---
 layout: section
@@ -40,312 +67,213 @@ Faire un schéma expliquant le fonctionnement du web et la relation client-serve
     Le serveur peut gérer chaque demande de manière unique et n'a pas besoin de conserver un état de session pour le client
 - Différents modèles pour la création de site et application web
   Solutions: 
-    - Statique
-      - Vanilla ou web-framework en SSG ou client-side
-    - Dynamique en monolitique
-    - Séparation du back et du front
-      - API REST
-        - Vanilla ou web-framework en SSR, SSG ou client-side
+  - Statique
+    - Vanilla ou web-framework en SSG ou client-side
+  - Dynamique en monolitique
+  - Séparation du back et du front
+  - API REST
+    - Vanilla ou web-framework en SSR, SSG ou client-side
 -->
 
 ---
+layout: section
+---
 
-# Navigation
+# Le navigateur
+Et son inspecteur
 
-Hover on the bottom-left corner to see the navigation's controls panel, [learn more](https://sli.dev/guide/navigation.html)
+<!--
+Important de comprendre comment fonctionne ses outils de travail
 
-### Keyboard Shortcuts
-
-|     |     |
-| --- | --- |
-| <kbd>right</kbd> / <kbd>space</kbd>| next animation or slide |
-| <kbd>left</kbd>  / <kbd>shift</kbd><kbd>space</kbd> | previous animation or slide |
-| <kbd>up</kbd> | previous slide |
-| <kbd>down</kbd> | next slide |
-
-<!-- https://sli.dev/guide/animations.html#click-animations -->
-<img
-  v-click
-  class="absolute -bottom-9 -left-7 w-80 opacity-50"
-  src="https://sli.dev/assets/arrow-bottom-left.svg"
-/>
-<p v-after class="absolute bottom-23 left-45 opacity-30 transform -rotate-10">Here!</p>
+Le navigateur, c'est comme une grande feuille blanche et on va venir y créer des interfaces utilisateurs !
+L'inpecteur permet de comprendre tout ce qu'il se passe dans le navigateur entre le code que l'on écrit et l'affiche qui est fait !
+-->
 
 ---
 layout: image-right
-image: https://source.unsplash.com/collection/94734566/1920x1080
+image: https://images.unsplash.com/photo-1455218873509-8097305ee378?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=687&q=80
 ---
 
-# Code
+# Les navigateurs
 
-Use code snippets and get the highlighting directly![^1]
+- Implémentent les spécifications différemment
+- Permettent l'interprétation de l'ensemble du code et la visualisation de notre page
+- Continnent l'inspecteur
 
-```ts {all|2|1-6|9|all}
-interface User {
-  id: number
-  firstName: string
-  lastName: string
-  role: string
-}
 
-function updateUser(id: number, update: User) {
-  const user = getUser(id)
-  const newUser = {...user, ...update}  
-  saveUser(id, newUser)
-}
-```
-
-<arrow v-click="3" x1="400" y1="420" x2="230" y2="330" color="#564" width="3" arrowSize="1" />
-
-[^1]: [Learn More](https://sli.dev/guide/syntax.html#line-highlighting)
-
-<style>
-.footnotes-sep {
-  @apply mt-20 opacity-10;
-}
-.footnotes {
-  @apply text-sm opacity-75;
-}
-.footnote-backref {
-  display: none;
-}
-</style>
-
----
-
-# Components
-
-<div grid="~ cols-2 gap-4">
-<div>
-
-You can use Vue components directly inside your slides.
-
-We have provided a few built-in components like `<Tweet/>` and `<Youtube/>` that you can use directly. And adding your custom components is also super easy.
-
-```html
-<Counter :count="10" />
-```
-
-<!-- ./components/Counter.vue -->
-<Counter :count="10" m="t-4" />
-
-Check out [the guides](https://sli.dev/builtin/components.html) for more.
-
-</div>
-<div>
-
-```html
-<Tweet id="1390115482657726468" />
-```
-
-<Tweet id="1390115482657726468" scale="0.65" />
-
-</div>
+<div class="abs-bl m-6">
+  <a href="https://caniuse.com" target="_blank">Can I Use</a>
+  -
+  <a href="https://developer.mozilla.org/en-US/" target="_blank">MDN</a>
 </div>
 
+<!--
+Il est important de difféncier différents types de navigateurs et de comprendre leurs constructions.
+
+- IE, mort et le support est arrêté par différent outils de développement comme [Vue.js](https://vuejs.org) ou [WordPress](https://wordpress.com)
+- Edge, Chrome, Opera utilise chromium et sont donc tous similaires. Microsoft, Google et Opera ajoutent une sur-couche pour permettre l'utilisation de leurs services.
+- Safari et les navigatoires doivent utiliser web-kit et donc ils sont tous similaires.
+- Chrome for Android et la plus part des navigateurs sur android utilise Blink
+
+La différence entre toutes ces catégories est dans l'implémentation des fonctionnalités, parser HTML, CSS JS et moteur de rendu CSS et moteur JS.
+
+Du coup, tous les navigateurs se sont pas identiques et des préfix doivent parfois être utilisé. Pour connaître l'implémentation des fonctionnalités, il est recommandé d'utiliser [caniuse](https://caniuse.com).
+-->
 
 ---
-class: px-20
+layout: image-left
+image: https://images.unsplash.com/photo-1508669232496-137b159c1cdb?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=688&q=80
 ---
 
-# Themes
+# L'inspecteur
 
-Slidev comes with powerful theming support. Themes can provide styles, layouts, components, or even configurations for tools. Switching between themes by just **one edit** in your frontmatter:
+- Insdipensable
+- Permet d'analyser son projet en observant
+  - Les élements
+  - Les scripts
+  - Le réseau
+  - Les sources
+  - ...
 
-<div grid="~ cols-2 gap-2" m="-t-2">
 
-```yaml
+<!-- 
+Indispensable notamment une fois qu'on a gouté à d'autres langages qui n'ont pas un outil comme celui-ci.
+
+Il faut faire une démonstration pour chaque onglet de ce que l'on peut y trouver.
+
+- Elements
+  Permet d'observer l'ensemble du code HTML et CSS du site
+- Console
+  Permet d'interpréter du javascript mais aussi d'inspecter le code javascript du site.
+- Réseau
+  Permet de voir l'ensemble des requêtes réseaux effectuées par le site. Sur l'ensemble des requêtes, on a accès à différentes informations comme les headers.
+- Sources
+  Permet de voir l'ensemble des fichiers dont le site fait appels. On peut les analyser en regardant le code mais aussi y placer des points d'arrêts pour inspecter les différents variables.
+-->
 ---
-theme: default
----
-```
-
-```yaml
----
-theme: seriph
----
-```
-
-<img border="rounded" src="https://github.com/slidevjs/themes/blob/main/screenshots/theme-default/01.png?raw=true">
-
-<img border="rounded" src="https://github.com/slidevjs/themes/blob/main/screenshots/theme-seriph/01.png?raw=true">
-
-</div>
-
-Read more about [How to use a theme](https://sli.dev/themes/use.html) and
-check out the [Awesome Themes Gallery](https://sli.dev/themes/gallery.html).
-
----
-preload: false
+layout: section
 ---
 
-# Animations
+# HTML
+HyperText Markup Langage
 
-Animations are powered by [@vueuse/motion](https://motion.vueuse.org/).
+---
 
-```html
-<div
-  v-motion
-  :initial="{ x: -80 }"
-  :enter="{ x: 0 }">
-  Slidev
-</div>
-```
+# Langage de balisage
 
-<div class="w-60 relative mt-6">
-  <div class="relative w-40 h-40">
-    <img
-      v-motion
-      :initial="{ x: 800, y: -100, scale: 1.5, rotate: -50 }"
-      :enter="final"
-      class="absolute top-0 left-0 right-0 bottom-0"
-      src="https://sli.dev/logo-square.png"
-    />
-    <img
-      v-motion
-      :initial="{ y: 500, x: -100, scale: 2 }"
-      :enter="final"
-      class="absolute top-0 left-0 right-0 bottom-0"
-      src="https://sli.dev/logo-circle.png"
-    />
-    <img
-      v-motion
-      :initial="{ x: 600, y: 400, scale: 2, rotate: 100 }"
-      :enter="final"
-      class="absolute top-0 left-0 right-0 bottom-0"
-      src="https://sli.dev/logo-triangle.png"
-    />
+<v-clicks>
+
+- Utilisation de tags pour la sémantique du contenu
+  ```html
+    <main>
+        <h2>This is a level 2 heading</h2>
+        <p>This a paragraph inside a p tag ! 💃</p>
+        <ul>
+          <li>Item 1 🚀</li>
+          <li>Item 2 🚌</li>
+          <li>Item 3 🚂</li>
+        </ul>
+    </main>
+  ``` 
+- Ne permet pas de faire de l'algorithmique
+- Ne permet pas de mettre en page son site
+- Toutes les références sont dans [Mozilla Developer Network](https://developer.mozilla.org/en-US/docs/Web/HTML/Element)
+
+</v-clicks>
+
+<!-- 
+L'HTML permet de donner du sens au contenu de son texte. C'est la signification de "permettre la sémantique".
+Pour donner ce sens, on utilise des tags. Il existe de nombreux tags que l'on peut trouver [à cette adresse](https://developer.mozilla.org/en-US/docs/Web/HTML/Element).
+
+Rien de mieux que l'inspecteur pour observer l'HTML d'une page web !
+
+La MDN est la bible du développeur web. Vous allez pouvoir y retrouver tout ce dont vous avez besoin.
+
+Faire une mise en pratique
+ -->
+---
+layout: section
+---
+
+# Mise en pratique
+HTML
+
+---
+layout: section
+---
+
+# CSS
+Cascading Style Sheet
+
+---
+layout: image-right
+image: https://images.unsplash.com/photo-1502252430442-aac78f397426?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1470&q=80
+---
+
+# Langage de mise en page
+
+- Fonctionnement en cascade
+- Permet la mise en page du contenu
+- Permet la création d'animations et de transitions
+
+<!--
+Le fonctionnement en cascade permet d'appliquer une règle à un parent et que celle-ci soit appliquée à tous ses enfants comme la couleur du texte.
+-->
+---
+layout: section
+---
+
+# Mise en pratique
+CSS
+
+<section class="max-w-md mx-auto mt-12 grid grid-cols-2">
+  <div class="flex flex-col space-y-2">
+    <span>Colors</span>
+    <span>Fonts</span>
+    <span>Border</span>
+    <span>Width</span>
+    <span>Height</span>
   </div>
-
-  <div
-    class="text-5xl absolute top-14 left-40 text-[#2B90B6] -z-1"
-    v-motion
-    :initial="{ x: -80, opacity: 0}"
-    :enter="{ x: 0, opacity: 1, transition: { delay: 2000, duration: 1000 } }">
-    Slidev
+  <div class="flex flex-col space-y-2">
+    <span>Display</span>
+    <span>Position</span>
+    <span>Z-Index</span>
+    <span>Flex</span>
+    <span>Grid</span>
   </div>
-</div>
+</section>
 
-<!-- vue script setup scripts can be directly used in markdown, and will only affects current page -->
-<script setup lang="ts">
-const final = {
-  x: 0,
-  y: 0,
-  rotate: 0,
-  scale: 1,
-  transition: {
-    type: 'spring',
-    damping: 10,
-    stiffness: 20,
-    mass: 2
-  }
-}
-</script>
+<!-- 
+Pour chacune de ses règles, on va faire une mise en pratique. Dans le même temps, on abordera les sélecteurs.
 
-<div
-  v-motion
-  :initial="{ x:35, y: 40, opacity: 0}"
-  :enter="{ y: 0, opacity: 1, transition: { delay: 3500 } }">
+Pour les sélecteurs, il faut parler
 
-[Learn More](https://sli.dev/guide/animations.html#motion)
+Pour display, position et z-index, on utilisera différentes boites pour montrer l'imbrication et le fonctionnement des différentes règles.
 
-</div>
+Pour flex et grid, on verra des exemples simples de mise en pages. Le TP permettra de compléter et de faire une mise en pratique sur du cas concret !
+-->
 
 ---
-
-# LaTeX
-
-LaTeX is supported out-of-box powered by [KaTeX](https://katex.org/).
-
-<br>
-
-Inline $\sqrt{3x-1}+(1+x)^2$
-
-Block
-$$
-\begin{array}{c}
-
-\nabla \times \vec{\mathbf{B}} -\, \frac1c\, \frac{\partial\vec{\mathbf{E}}}{\partial t} &
-= \frac{4\pi}{c}\vec{\mathbf{j}}    \nabla \cdot \vec{\mathbf{E}} & = 4 \pi \rho \\
-
-\nabla \times \vec{\mathbf{E}}\, +\, \frac1c\, \frac{\partial\vec{\mathbf{B}}}{\partial t} & = \vec{\mathbf{0}} \\
-
-\nabla \cdot \vec{\mathbf{B}} & = 0
-
-\end{array}
-$$
-
-<br>
-
-[Learn more](https://sli.dev/guide/syntax#latex)
-
+layout: cover
+background: https://images.unsplash.com/photo-1483728642387-6c3bdd6c93e5?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1476&q=80
 ---
 
-# Diagrams
+# Un TP pour tout matriser
+The Journey
 
-You can create diagrams / graphs from textual descriptions, directly in your Markdown.
+[Page à réaliser](https://the-journey.web-beginner.esteban-soubiran.site)
 
-<div class="grid grid-cols-3 gap-10 pt-4 -mb-6">
-
-```mermaid {scale: 0.5}
-sequenceDiagram
-    Alice->John: Hello John, how are you?
-    Note over Alice,John: A typical interaction
-```
-
-```mermaid {theme: 'neutral', scale: 0.8}
-graph TD
-B[Text] --> C{Decision}
-C -->|One| D[Result 1]
-C -->|Two| E[Result 2]
-```
-
-```plantuml {scale: 0.7}
-@startuml
-
-package "Some Group" {
-  HTTP - [First Component]
-  [Another Component]
-}
-
-node "Other Groups" {
-  FTP - [Second Component]
-  [First Component] --> FTP
-}
-
-cloud {
-  [Example 1]
-}
-
-
-database "MySql" {
-  folder "This is my folder" {
-    [Folder 3]
-  }
-  frame "Foo" {
-    [Frame 4]
-  }
-}
-
-
-[Another Component] --> [Example 1]
-[Example 1] --> [Folder 3]
-[Folder 3] --> [Frame 4]
-
-@enduml
-```
-
-</div>
-
-[Learn More](https://sli.dev/guide/syntax.html#diagrams)
-
+<!--
+Permet d'aborder l'ensemble des éléments vues précédemments. Aussi, ça permet de faire un hover et donc d'aborder les pseudos classes.
+-->
 
 ---
-layout: center
-class: text-center
+layout: end
+text: fin
 ---
 
-# Learn More
+<!-- 
+Dans les cours suivants, il y a aura un approfondissement du CSS via les pseudos classes et les @rules. On passera aussi sur l'intégration de maquettes responsives en étant mobile first.
 
-[Documentations](https://sli.dev) · [GitHub](https://github.com/slidevjs/slidev) · [Showcases](https://sli.dev/showcases.html)
-ml)
+Puis, on pourra commencer à voir les bases du javascript.
+ -->
