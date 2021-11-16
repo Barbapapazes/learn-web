@@ -69,7 +69,7 @@ Faire un schéma expliquant le fonctionnement du web et la relation client-serve
   Solutions: 
   - Statique
     - Vanilla ou web-framework en SSG ou client-side
-  - Dynamique en monolitique
+  - Dynamique en monolithique
   - Séparation du back et du front
   - API REST
     - Vanilla ou web-framework en SSR, SSG ou client-side
@@ -86,7 +86,7 @@ Et son inspecteur
 Important de comprendre comment fonctionne ses outils de travail
 
 Le navigateur, c'est comme une grande feuille blanche et on va venir y créer des interfaces utilisateurs !
-L'inpecteur permet de comprendre tout ce qu'il se passe dans le navigateur entre le code que l'on écrit et l'affiche qui est fait !
+L'inspecteur permet de comprendre tout ce qu'il se passe dans le navigateur entre le code que l'on écrit et l'affiche qui est fait !
 -->
 
 ---
@@ -98,7 +98,7 @@ image: https://images.unsplash.com/photo-1455218873509-8097305ee378?ixid=MnwxMjA
 
 - Implémentent les spécifications différemment
 - Permettent l'interprétation de l'ensemble du code et la visualisation de notre page
-- Continnent l'inspecteur
+- Contiennent l'inspecteur
 
 
 <div class="abs-bl m-6">
@@ -108,11 +108,11 @@ image: https://images.unsplash.com/photo-1455218873509-8097305ee378?ixid=MnwxMjA
 </div>
 
 <!--
-Il est important de difféncier différents types de navigateurs et de comprendre leurs constructions.
+Il est important de différencier différents types de navigateurs et de comprendre leurs constructions.
 
 - IE, mort et le support est arrêté par différent outils de développement comme [Vue.js](https://vuejs.org) ou [WordPress](https://wordpress.com)
 - Edge, Chrome, Opera utilise chromium et sont donc tous similaires. Microsoft, Google et Opera ajoutent une sur-couche pour permettre l'utilisation de leurs services.
-- Safari et les navigatoires doivent utiliser web-kit et donc ils sont tous similaires.
+- Safari et les navigateurs doivent utiliser web-kit et donc ils sont tous similaires.
 - Chrome for Android et la plus part des navigateurs sur android utilise Blink
 
 La différence entre toutes ces catégories est dans l'implémentation des fonctionnalités, parser HTML, CSS JS et moteur de rendu CSS et moteur JS.
@@ -127,9 +127,9 @@ image: https://images.unsplash.com/photo-1508669232496-137b159c1cdb?ixid=MnwxMjA
 
 # L'inspecteur
 
-- Insdipensable
+- Indispensable
 - Permet d'analyser son projet en observant
-  - Les élements
+  - Les éléments
   - Les scripts
   - Le réseau
   - Les sources
@@ -137,7 +137,7 @@ image: https://images.unsplash.com/photo-1508669232496-137b159c1cdb?ixid=MnwxMjA
 
 
 <!-- 
-Indispensable notamment une fois qu'on a gouté à d'autres langages qui n'ont pas un outil comme celui-ci.
+Indispensable notamment une fois qu'on a goûté à d'autres langages qui n'ont pas un outil comme celui-ci.
 
 Il faut faire une démonstration pour chaque onglet de ce que l'on peut y trouver.
 
@@ -231,6 +231,8 @@ CSS
     <span>Colors</span>
     <span>Fonts</span>
     <span>Border</span>
+    <span>Margin</span>
+    <span>Padding</span>
     <span>Width</span>
     <span>Height</span>
   </div>
@@ -243,28 +245,326 @@ CSS
   </div>
 </section>
 
-<!-- 
+<!--
 Pour chacune de ses règles, on va faire une mise en pratique. Dans le même temps, on abordera les sélecteurs.
 
-Pour les sélecteurs, il faut parler
+Pour les sélecteurs, il faut parler de leur fonctionnement et de leurs spécificités.
 
-Pour display, position et z-index, on utilisera différentes boites pour montrer l'imbrication et le fonctionnement des différentes règles.
+Pour colors, fonts, border, width, height, margin et padding on passera directement sur un éditeur de code.
+Dans le cadre des margins, on rappellera que les margins ne se chevauche pas. 
+Pour les margins et les paddings, il faut faire le schémas avec les boites.
 
-Pour flex et grid, on verra des exemples simples de mise en pages. Le TP permettra de compléter et de faire une mise en pratique sur du cas concret !
+Pour display, position et z-index, on utilisera différentes boites pour montrer l'imbrication et le fonctionnement des différentes règles. Des slides permettent de le montrer.
+
+Pour flex et grid, on verra des exemples simples de mise en pages et des slides sont préparées. Le TP permettra de compléter et de faire une mise en pratique sur du cas concret !
+Flex permet de faire de l'alignement dans 1 dimension
+Grid permet de faire de l'alignement dans 2 dimensions
 -->
+
+---
+
+<section>
+  <div class="space-y-4 mb-16">
+  <h2>Position : Static</h2>
+    <div class="border-2 border-teal-600 bg-teal-300 text-black text-center p-4">
+      Box 1
+    </div>
+    <div class="border-2 border-cyan-600 bg-cyan-300 text-black text-center p-4">
+      Box 2
+    </div>
+    <div class="border-2 border-light-blue-600 bg-light-blue-300 text-black text-center p-4">
+      Box 3
+    </div>
+  </div>
+</section>
+
+- Positionné selon le flow normal du document
+- `top`,`bottom`, `right`, `left` et `z-index` n'ont pas d'effet
+- Valeur par défaut
+
+<div class="abs-br m-6">
+  <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/position" target="_blank">MDN</a>
+</div>
+
+---
+
+<section>
+  <div class="space-y-4 mb-16">
+    <h2>Position : Relative</h2>
+    <div class="border-2 border-teal-600 bg-teal-300 text-black text-center p-4">
+      Box 1
+    </div>
+    <div class="relative top-8 left-4 border-2 border-cyan-600 bg-cyan-300 text-black text-center p-4">
+      Box 2
+    </div>
+    <div class="border-2 border-light-blue-600 bg-light-blue-300 text-black text-center p-4">
+      Box 3
+    </div>
+  </div>
+</section>
+
+- Positionné selon le flow normal du document
+- `top`,`bottom`, `right`, `left` et `z-index` permet de positionner l'élément relativement à lui-même
+- N'affecte pas les autres éléments
+
+<div class="abs-br m-6">
+  <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/position" target="_blank">MDN</a>
+</div>
+
+---
+
+<section>
+  <div class="space-y-4 mb-16">
+    <h2>Position : Absolute</h2>
+    <div class="relative space-y-4 border border-gray-100 p-2">
+      <div class="border-2 border-teal-600 bg-teal-300 text-black text-center p-4">
+        Box 1
+      </div>
+      <div class="absolute top-8 right-1/2 border-2 border-cyan-600 bg-cyan-300 text-black text-center p-4">
+        Box 2
+      </div>
+      <div class="border-2 border-light-blue-600 bg-light-blue-300 text-black text-center p-4">
+        Box 3
+      </div>
+    </div>
+  </div>
+</section>
+
+- Sortie du flow du document
+- `top`,`bottom`, `right`, `left` et `z-index` permet de positionner l'élément relativement à un parent positionné
+
+<div class="abs-br m-6">
+  <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/position" target="_blank">MDN</a>
+</div>
+
+---
+
+<section>
+  <div class="space-y-4 mb-16">
+    <h2>Display : Block</h2>
+    <div class="space-y-4 border border-gray-100 p-2">
+      <div class="border-2 border-teal-600 bg-teal-300 text-black text-center p-4">
+        Box 1
+      </div>
+      <div class="border-2 border-cyan-600 bg-cyan-300 text-black text-center p-4">
+        Box 2
+      </div>
+      <div class="border-2 border-light-blue-600 bg-light-blue-300 text-black text-center p-4">
+        Box 3
+      </div>
+    </div>
+  </div>
+</section>
+
+- Génère un retour à la ligne avant et après l'élément lorsqu'il est dans le flow du document
+- Valeur par défaut
+
+<div class="abs-br m-6">
+  <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/display" target="_blank">MDN</a>
+</div>
+
+---
+
+<section>
+  <div class="space-y-4 mb-16">
+    <h2>Display : Inline</h2>
+    <div class="space-y-4 border border-gray-100 p-2">
+      <div class="inline border-2 border-teal-600 bg-teal-300 text-black text-center p-4">
+        Box 1
+      </div>
+      <div class="inline border-2 border-cyan-600 bg-cyan-300 text-black text-center p-4">
+        Box 2
+      </div>
+      <div class="inline border-2 border-light-blue-600 bg-light-blue-300 text-black text-center p-4">
+        Box 3
+      </div>
+    </div>
+  </div>
+</section>
+
+- Ne génère pas un retour à la ligne avant et après l'élément lorsqu'il est dans le flow du document
+- Les marges sur y ne sont plus prises en compte
+
+<div class="abs-br m-6">
+  <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/display" target="_blank">MDN</a>
+</div>
+
+---
+layout: two-cols
+---
+
+<section>
+  <div class="space-y-4 mb-16">
+    <h2>Display : Flex</h2>
+    <div class="space-y-4 border border-gray-100 p-2">
+      <div class="flex">
+        <div class="border-2 border-teal-600 bg-teal-300 text-black text-center p-4">
+          Box 1
+        </div>
+        <div class="border-2 border-cyan-600 bg-cyan-300 text-black text-center p-4">
+          Box 2
+        </div>
+        <div class="border-2 border-light-blue-600 bg-light-blue-300 text-black text-center p-4">
+          Box 3
+        </div>
+      </div>
+      <div class="flex justify-center">
+        <div class="border-2 border-teal-600 bg-teal-300 text-black text-center p-4">
+          Box 1
+        </div>
+        <div class="border-2 border-cyan-600 bg-cyan-300 text-black text-center p-4">
+          Box 2
+        </div>
+        <div class="border-2 border-light-blue-600 bg-light-blue-300 text-black text-center p-4">
+          Box 3
+        </div>
+      </div>
+      <div class="flex justify-end">
+        <div class="border-2 border-teal-600 bg-teal-300 text-black text-center p-4">
+          Box 1
+        </div>
+        <div class="border-2 border-cyan-600 bg-cyan-300 text-black text-center p-4">
+          Box 2
+        </div>
+        <div class="border-2 border-light-blue-600 bg-light-blue-300 text-black text-center p-4">
+          Box 3
+        </div>
+      </div>
+      <div class="flex justify-between">
+        <div class="border-2 border-teal-600 bg-teal-300 text-black text-center p-4">
+          Box 1
+        </div>
+        <div class="border-2 border-cyan-600 bg-cyan-300 text-black text-center p-4">
+          Box 2
+        </div>
+        <div class="border-2 border-light-blue-600 bg-light-blue-300 text-black text-center p-4">
+          Box 3
+        </div>
+      </div>
+      <div class="flex justify-around">
+        <div class="border-2 border-teal-600 bg-teal-300 text-black text-center p-4">
+          Box 1
+        </div>
+        <div class="border-2 border-cyan-600 bg-cyan-300 text-black text-center p-4">
+          Box 2
+        </div>
+        <div class="border-2 border-light-blue-600 bg-light-blue-300 text-black text-center p-4">
+          Box 3
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+::right::
+
+<section class="h-full ml-2">
+  <div class="space-y-4 h-full">
+    <div class="border border-gray-100 p-2 grid grid-cols-5 gap-4 h-full">
+      <div class="flex flex-col">
+        <div class="border-2 border-teal-600 bg-teal-300 text-black text-center p-4">
+          Box 1
+        </div>
+        <div class="border-2 border-cyan-600 bg-cyan-300 text-black text-center p-4">
+          Box 2
+        </div>
+        <div class="border-2 border-light-blue-600 bg-light-blue-300 text-black text-center p-4">
+          Box 3
+        </div>
+      </div>
+      <div class="flex flex-col justify-center">
+        <div class="border-2 border-teal-600 bg-teal-300 text-black text-center p-4">
+          Box 1
+        </div>
+        <div class="border-2 border-cyan-600 bg-cyan-300 text-black text-center p-4">
+          Box 2
+        </div>
+        <div class="border-2 border-light-blue-600 bg-light-blue-300 text-black text-center p-4">
+          Box 3
+        </div>
+      </div>
+      <div class="flex flex-col justify-end">
+        <div class="border-2 border-teal-600 bg-teal-300 text-black text-center p-4">
+          Box 1
+        </div>
+        <div class="border-2 border-cyan-600 bg-cyan-300 text-black text-center p-4">
+          Box 2
+        </div>
+        <div class="border-2 border-light-blue-600 bg-light-blue-300 text-black text-center p-4">
+          Box 3
+        </div>
+      </div>
+      <div class="flex flex-col justify-between">
+        <div class="border-2 border-teal-600 bg-teal-300 text-black text-center p-4">
+          Box 1
+        </div>
+        <div class="border-2 border-cyan-600 bg-cyan-300 text-black text-center p-4">
+          Box 2
+        </div>
+        <div class="border-2 border-light-blue-600 bg-light-blue-300 text-black text-center p-4">
+          Box 3
+        </div>
+      </div>
+      <div class="flex flex-col justify-around">
+        <div class="border-2 border-teal-600 bg-teal-300 text-black text-center p-4">
+          Box 1
+        </div>
+        <div class="border-2 border-cyan-600 bg-cyan-300 text-black text-center p-4">
+          Box 2
+        </div>
+        <div class="border-2 border-light-blue-600 bg-light-blue-300 text-black text-center p-4">
+          Box 3
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="abs-br m-6">
+  <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/display" target="_blank">MDN</a>
+</div>
+
+---
+
+<section>
+  <h2>Display : Grid</h2>
+  <div class="border border-gray-100 p-2 mt-4">
+    <div class="grid grid-cols-5 grid-rows-6 gap-2">
+      <div class="col-span-4 border-2 border-teal-600 bg-teal-300 text-black text-center p-4">
+        Box 1
+      </div>
+      <div class="border-2 border-cyan-600 bg-cyan-300 text-black text-center p-4">
+        Box 2
+      </div>
+      <div class="row-start-3 col-start-3 border-2 border-light-blue-600 bg-light-blue-300 text-black text-center p-4">
+        Box 3
+      </div>
+      <div class="row-start-4 col-start-4 col-span-2 row-span-2 border-2 border-blue-600 bg-blue-300 text-black flex items-center justify-center p-4">
+        Box 4
+      </div>
+        <div class="row-start-5 col-span-2 row-span-2  border-2 border-indigo-600 bg-indigo-300 text-black flex items-center justify-center p-4">
+        Box 5
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="abs-br m-6">
+  <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/display" target="_blank">MDN</a>
+</div>
 
 ---
 layout: cover
 background: https://images.unsplash.com/photo-1483728642387-6c3bdd6c93e5?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1476&q=80
 ---
 
-# Un TP pour tout matriser
+# Un TP pour tout maîtriser
 The Journey
 
 [Page à réaliser](https://the-journey.web-beginner.esteban-soubiran.site)
 
 <!--
-Permet d'aborder l'ensemble des éléments vues précédemments. Aussi, ça permet de faire un hover et donc d'aborder les pseudos classes.
+Permet d'aborder l'ensemble des éléments vues précédemment. Aussi, ça permet de faire un hover et donc d'aborder les pseudos classes.
 -->
 
 ---
@@ -273,7 +573,7 @@ text: fin
 ---
 
 <!-- 
-Dans les cours suivants, il y a aura un approfondissement du CSS via les pseudos classes et les @rules. On passera aussi sur l'intégration de maquettes responsives en étant mobile first.
+Dans les cours suivants, il y a aura un approfondissement du CSS via les pseudos classes et les @rules. On passera aussi sur l'intégration de maquettes responsive en étant mobile first.
 
 Puis, on pourra commencer à voir les bases du javascript.
  -->
