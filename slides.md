@@ -266,14 +266,16 @@ Grid permet de faire de l'alignement dans 2 dimensions
 <section>
   <div class="space-y-4 mb-16">
   <h2>Position : Static</h2>
-    <div class="border-2 border-teal-600 bg-teal-300 text-black text-center p-4">
-      Box 1
-    </div>
-    <div class="border-2 border-cyan-600 bg-cyan-300 text-black text-center p-4">
-      Box 2
-    </div>
-    <div class="border-2 border-light-blue-600 bg-light-blue-300 text-black text-center p-4">
-      Box 3
+    <div class="border border-gray-100 p-2 space-y-4">
+      <div class="border-2 border-teal-600 bg-teal-300 text-black text-center p-4">
+        Box 1
+     </div>
+      <div class="border-2 border-cyan-600 bg-cyan-300 text-black text-center p-4">
+        Box 2
+      </div>
+      <div class="border-2 border-light-blue-600 bg-light-blue-300 text-black text-center p-4">
+        Box 3
+      </div>
     </div>
   </div>
 </section>
@@ -291,14 +293,16 @@ Grid permet de faire de l'alignement dans 2 dimensions
 <section>
   <div class="space-y-4 mb-16">
     <h2>Position : Relative</h2>
-    <div class="border-2 border-teal-600 bg-teal-300 text-black text-center p-4">
-      Box 1
-    </div>
-    <div class="relative top-8 left-4 border-2 border-cyan-600 bg-cyan-300 text-black text-center p-4">
-      Box 2
-    </div>
-    <div class="border-2 border-light-blue-600 bg-light-blue-300 text-black text-center p-4">
-      Box 3
+    <div class="border border-gray-100 p-2 space-y-4">
+      <div class="border-2 border-teal-600 bg-teal-300 text-black text-center p-4">
+        Box 1
+      </div>
+      <div class="relative top-8 left-4 border-2 border-cyan-600 bg-cyan-300 text-black text-center p-4">
+        Box 2
+      </div>
+      <div class="border-2 border-light-blue-600 bg-light-blue-300 text-black text-center p-4">
+        Box 3
+      </div>
     </div>
   </div>
 </section>
