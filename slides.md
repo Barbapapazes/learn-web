@@ -581,3 +581,86 @@ Dans les cours suivants, il y a aura un approfondissement du CSS via les pseudos
 
 Puis, on pourra commencer à voir les bases du javascript.
  -->
+
+---
+layout: section
+---
+
+# CSS Avancé
+
+---
+
+# Sélecteurs
+
+- Permettent de sélectionner un ou des éléments
+- Permettent une sélection très précises et / ou très variées
+- Permettent de sélectionner des états des éléments
+
+<br>
+<br>
+
+```css
+/* Quelques exemples */
+
+.ma_class {} 
+
+.ma_class mon_element {}
+
+#mon_id {}
+
+mon_element:mon_etat {}
+
+@media screen and (min-width: 640px) {}
+```
+
+<div class="abs-br m-6 space-x-4">
+  <a href="https://flukeout.github.io" target="_blank">CSS Diner</a>
+  <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Selectors" target="_blank">MDN</a>
+</div>
+
+<!-- 
+Il faut parler des priorités sur les sélecteurs et le poids de chacun. Pour cela, on peut utiliser l'outil de VSCode qui indique le poids total d'une classe dans un fichier CSS.
+-->
+
+---
+layout: image-right
+image: https://images.unsplash.com/photo-1607992922515-7e38329e65d4?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1014&q=80
+---
+
+# Pseudo-classes
+
+<div class="abs-br m-6 space-x-4">
+  <a href="https://flukeout.github.io" target="_blank">CSS Diner</a>
+  <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Selectors" target="_blank">MDN</a>
+</div>
+
+<!-- 
+Faire une découverte et un exercice sur [CSS Diner](https://flukeout.github.io)
+-->
+
+---
+
+# Pseudo-éléments
+
+---
+ 
+# Design Responsive
+
+---
+
+# @rules
+
+---
+preload: false
+---
+
+# Transition & Animations
+
+---
+
+# Miscellaneous
+
+
+<!-- 
+Pour les variables en CSS, il faut faire une démonstration. Il faut aussi montrer que plus la variable est proche de sa cible, plus elle est prioritaire. Cela permet une redéfinition et un changement de l'élément sans jour sur les classes. Le code est donc plus lisible et plus simple à écrire et à maintenir.
+ -->
