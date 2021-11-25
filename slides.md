@@ -266,14 +266,16 @@ Grid permet de faire de l'alignement dans 2 dimensions
 <section>
   <div class="space-y-4 mb-16">
   <h2>Position : Static</h2>
-    <div class="border-2 border-teal-600 bg-teal-300 text-black text-center p-4">
-      Box 1
-    </div>
-    <div class="border-2 border-cyan-600 bg-cyan-300 text-black text-center p-4">
-      Box 2
-    </div>
-    <div class="border-2 border-light-blue-600 bg-light-blue-300 text-black text-center p-4">
-      Box 3
+    <div class="border border-gray-100 p-2 space-y-4">
+      <div class="border-2 border-teal-600 bg-teal-300 text-black text-center p-4">
+        Box 1
+     </div>
+      <div class="border-2 border-cyan-600 bg-cyan-300 text-black text-center p-4">
+        Box 2
+      </div>
+      <div class="border-2 border-light-blue-600 bg-light-blue-300 text-black text-center p-4">
+        Box 3
+      </div>
     </div>
   </div>
 </section>
@@ -291,14 +293,16 @@ Grid permet de faire de l'alignement dans 2 dimensions
 <section>
   <div class="space-y-4 mb-16">
     <h2>Position : Relative</h2>
-    <div class="border-2 border-teal-600 bg-teal-300 text-black text-center p-4">
-      Box 1
-    </div>
-    <div class="relative top-8 left-4 border-2 border-cyan-600 bg-cyan-300 text-black text-center p-4">
-      Box 2
-    </div>
-    <div class="border-2 border-light-blue-600 bg-light-blue-300 text-black text-center p-4">
-      Box 3
+    <div class="border border-gray-100 p-2 space-y-4">
+      <div class="border-2 border-teal-600 bg-teal-300 text-black text-center p-4">
+        Box 1
+      </div>
+      <div class="relative top-8 left-4 border-2 border-cyan-600 bg-cyan-300 text-black text-center p-4">
+        Box 2
+      </div>
+      <div class="border-2 border-light-blue-600 bg-light-blue-300 text-black text-center p-4">
+        Box 3
+      </div>
     </div>
   </div>
 </section>
@@ -561,7 +565,7 @@ background: https://images.unsplash.com/photo-1483728642387-6c3bdd6c93e5?ixid=Mn
 # Un TP pour tout maîtriser
 The Journey
 
-[Page à réaliser](https://the-journey.web-beginner.esteban-soubiran.site)
+[Page à réaliser](https://the-journey.learn-web.esteban-soubiran.site)
 
 <!--
 Permet d'aborder l'ensemble des éléments vues précédemment. Aussi, ça permet de faire un hover et donc d'aborder les pseudos classes.
@@ -577,3 +581,324 @@ Dans les cours suivants, il y a aura un approfondissement du CSS via les pseudos
 
 Puis, on pourra commencer à voir les bases du javascript.
  -->
+
+---
+layout: section
+---
+
+# CSS Avancé
+
+---
+
+# Sélecteurs
+
+- Permettent de sélectionner un ou des éléments
+- Permettent une sélection très précises et / ou très variées
+- Permettent de sélectionner les états des éléments
+
+<br>
+<br>
+
+```css
+/* Quelques exemples */
+
+.ma_class {} 
+
+.ma_class mon_element {}
+
+#mon_id {}
+
+mon_element:mon_etat {}
+
+@media screen and (min-width: 640px) {}
+```
+
+<div class="abs-br m-6 space-x-4">
+  <a href="https://flukeout.github.io" target="_blank">CSS Diner</a>
+  <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Selectors" target="_blank">MDN</a>
+</div>
+
+<!-- 
+Il faut parler des priorités sur les sélecteurs et le poids de chacun. Pour cela, on peut utiliser l'outil de VSCode qui indique le poids total d'une classe dans un fichier CSS.
+
+Présenter et manipuler les différents éléments
+
+```css
+/* Universal selector */
+* {}
+/* Type selector */
+body {}
+/* Class selector */
+.className {}
+/* ID selector */
+#id {}
+/* Attribute selector */
+[attribut="value"] {}
+/* Selector list */
+A, B {}
+/* Descendant combinator */
+A B {}
+/* Child combinator */
+A > B {}
+/* General sibling combinator */
+A ~ B {}
+/* Adjacent sibling combinator */
+A + B {}
+```
+
+-->
+
+---
+layout: image-right
+image: https://images.unsplash.com/photo-1607992922515-7e38329e65d4?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1014&q=80
+---
+
+# Pseudo-classes
+
+- Permet de sélectionner des éléments sur des informations qui ne sont pas dans le document
+- Utilise les `:`
+
+<br>
+<br>
+
+```css
+:root {}
+:first-child {}
+/* ... */
+:checked {}
+/* ... */
+:hover {}
+:active {}
+:focus {}
+/* ... */
+:visited {}
+/* ... */
+```
+
+<div class="abs-br m-6 space-x-4">
+  <a href="https://flukeout.github.io" target="_blank">CSS Diner</a>
+  <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Pseudo-classes" target="_blank">MDN</a>
+</div>
+
+<!-- 
+On parle d'informations relatives à des éléments.
+
+Faire une découverte et un exercice sur [CSS Diner](https://flukeout.github.io).
+Permet de faire un travail en autonomie
+-->
+
+---
+layout: image-left
+image: https://images.unsplash.com/photo-1565649373303-d478f7bfcc32?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=987&q=80
+---
+# Pseudo-éléments
+
+- Permet de représenter des éléments qui ne sont pas inclut dans le fichier HTML
+- Utilise les `::`
+
+<div class="abs-br m-6 space-x-4">
+  <a href="https://flukeout.github.io" target="_blank">CSS Diner</a>
+  <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Pseudo-elements" target="_blank">MDN</a>
+</div>
+
+<!--
+On parle des éléments directement.
+
+Aller faire un tour dans la documentation et indiquer qu'il s'agit de sélecteurs très peu utilisé.
+-->
+
+---
+ 
+# Design Responsive
+
+<ul class="space-y-8">
+  <li v-click="1">
+      Capacité du CSS à s'adapter selon la taille de l'écran
+  </li>
+  <li v-click="2">
+    Mobile first ou Desktop first
+  </li>
+  <li v-click="3">
+    Utilisation de règles spéciales, les @rules
+  </li>
+</ul>
+
+<br>
+<br>
+
+<div v-click="4">
+
+  ```css
+  @media screen and (min-width: 640px) {
+    .className {}
+  }
+  ```
+  
+</div>
+
+<div class="abs-br m-6">
+  <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/At-rule" target="_blank">MDN</a>
+</div>
+
+<!-- 
+Il faut montrer dans l'inspecteur comment on peut simuler la taille d'un écran.
+Il faut expliquer pour quoi c'est important d'avoir un design responsible, notamment quand on sait que plus de 50% du traffic se fait sur des appareils mobiles.
+
+Il faut expliquer ce qu'est le mobile first dans la création des designs. En pratiquant cela, on s'assure que la meilleure version soit celle pour mobile et la transition à la version grand écran demande moins de modifications que l'inverse. La transition du desktop au mobile est complexe dans ce sens mais très naturel du mobile au desktop. Aussi, un design mobile est ok sur desktop mais pas l'inverse !
+
+Se rendre sur l'[exemple](https://the-journey.learn-web.esteban-soubiran.site) pour avoir une démonstration du concept de mobile first.
+-->
+
+---
+preload: false
+layout: two-cols
+clicks: 6
+---
+
+# Transition & Animations
+
+
+<ul class="space-y-8 mr-4">
+  <li v-click="1">
+      Permet de créer du mouvement entre 2 positions pour un élément
+  </li>
+  <li v-click="2">
+    Création de mouvement grâce au @rules
+  </li>
+  <li v-click="3">
+    Permet de rendre un site plus agréable à l'utilisation mais ce n'est pas indispensable
+  </li>
+</ul>
+
+<div
+  v-click="5"
+  class="absolute bottom-16 left-16 rounded-xl bg-indigo-500 border-4 border-indigo-700 w-24 h-24"
+  v-motion
+  :initial="{
+    y: -10,
+  }"
+  :enter="{
+    y: 10,
+    transition: {
+      repeat: Infinity,
+      repeatType: 'mirror',
+      duration: 3000,
+      ease: 'easeOut',
+    },
+  }"
+></div>
+
+<div
+  v-if="$slidev.nav.clicks === 6"
+  v-click="6"
+  class="absolute bottom-16 left-46 rounded-xl bg-purple-500 border-4 border-purple-700 w-24 h-24"
+  v-motion
+  :initial="{
+    x: 1200,
+  }"
+  :enter="{
+    x: 0
+  }"
+></div>
+
+::right::
+
+<v-click at="4">
+
+  ```css
+  .className {
+    transition: name1 time timing-function
+  }
+
+  @keyframe name1 {
+    from {
+      opacity: 0;
+    }
+
+    to {
+      opacity: 1;
+    }
+    /* Ou utilisation des pourcentages */
+  }
+  ```
+
+</v-click>
+
+<div class="abs-br m-6">
+  <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/At-rule" target="_blank">MDN</a>
+</div>
+
+<!-- 
+Il faut faire une démonstration avec un hover sur la couleur pour montrer la différence entre l'élément sans et avec transition.
+-->
+
+---
+
+# Miscellaneous
+
+<v-clicks>
+
+- Les variables CSS
+  ```css
+  :root {
+    --color-primary: #454647;
+  }
+
+  .className {
+    color: var(--color-primary)
+  };
+  ```
+
+- BEM
+
+- Utility classes
+
+- Pré-processeur CSS: SASS, PostCSS
+
+</v-clicks>
+
+<div class="abs-br m-6 space-x-4">
+  <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_custom_properties" target="_blank">Variables</a>
+  <a href="http://getbem.com/naming/" target="_blank">BEM</a>
+  <a href="https://tailwindcss.com/" target="_blank">Utility</a>
+</div>
+
+<!-- 
+Pour les variables en CSS, il faut faire une démonstration. Il faut aussi montrer que plus la variable est proche de sa cible, plus elle est prioritaire. Cela permet une redéfinition et un changement de l'élément sans jour sur les classes. Le code est donc plus lisible et plus simple à écrire et à maintenir.
+
+Pour BEM, on peut se rendre sur le site pour l'expliquer et aller voir dans la documentation de [bootstrap](https://getbootstrap.com/) pour observer les variants. Il faut expliquer ce qu'est bootstrap et surtout montrer ses limites en terme de tailles et de personnalisation.
+
+Pour Utility, on peut se rendre sur le site de [TailwindCSS](https://tailwindcss.com) pour présenter ce qu'est une classe utilitaire.
+
+Et il est aussi tout à fait possible de faire son CSS totalement personnalisé sans suivre aucunes conventions. Cependant, les conventions, ça permet de faire du meilleur code et du code plus maintenable.
+
+Pour les pré-processeur, il faut se rendre sur leur site, [SASS](https://sass-lang.com/) et [PostCSS](https://postcss.org/), pour expliquer en quoi ça consiste. Il faut parler aussi de l'ajout des prefix en fonction des navigateurs.
+-->
+---
+layout: section
+---
+
+# Javascript
+
+---
+layout: cover
+background: https://images.unsplash.com/photo-1605352825608-cfcbf83f55a8?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1374&q=80
+---
+# Un TP pour tout maîtriser
+The Journey : la suite
+
+[Page à réaliser](https://the-journey.learn-web.esteban-soubiran.site)
+
+<!--
+Permet d'aborder l'ensemble des éléments vues précédemment.
+
+- Design Responsive
+- Variables
+- Convention BEM
+- Création du menu avec du javascript
+-->
+
+
+---
+layout: end
+---
